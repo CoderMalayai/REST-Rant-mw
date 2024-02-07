@@ -22,3 +22,39 @@ REST-Rant is an app where users can review restaurants.
 | POST | `/places/:id/rant` | Create a rant (comment) about a particular place |
 | DELETE | `/places/:id/rant/:rantId` | Delete a rant (comment) about a particular place |
 | GET | `*` | 404 page (matches any route not defined above) |
+
+## Database
+
+**Places**
+
+| Field | Type |
+| ----- | ---- |
+| _id | Object ID |
+| name | String |
+| city | String |
+| state | String |
+| cuisines | String |
+| pic | String |
+
+**Rants**
+
+| Field | Type |
+| ----- | ---- |
+| _id | Object ID |
+| place_id | ref(places) Object_Id |
+| rant | Boolean |
+| rating | Number |
+| comment | String |
+| reviewer | String |
+
+## Planning
+
+### User Stories
+
+As a restaurant reviewer, I need a app where you can add, update, and delete restaurants I like. A way to add/update/delete comments. With this app I can go try new foods around the area I didn't know about and add my own review/comment to let everyone else know.
+
+### Wireframes
+
+![A simple draw up of how I want a app to be.](/assests/REST-Rant%20Wireframe.jpg)
+
+## Notes
