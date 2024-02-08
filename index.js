@@ -16,8 +16,7 @@ app.use('/places', require('./controllers/places'));
 
 // wildcard/ 404 route
 app.get('*', (req, res) => {
-    console.log('user requested unknown route: ', req.url);
-    res.status(404).send('<h1>404 Page</h1>');
+    res.render('error404')
 });
 
 // Connections
