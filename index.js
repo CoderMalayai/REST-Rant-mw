@@ -7,12 +7,13 @@ const app = express();
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
+app.use(express.urlencoded({ extented: true }))
 
 app.get('/', (req, res) => {
     res.render('Home');
 });
 
-//Load the places controller
+// Load the places controller
 app.use('/places', require('./controllers/places'));
 
 // wildcard/ 404 route
