@@ -5,11 +5,17 @@ function home () {
     return (
         <Def>
             <main>
-                <h1>HOME</h1>
+                <h1>REST-Rant</h1>
+                <a href="/places">
+                    <button className="btn-primary">Places Page</button>
+                </a>
+                <div>
+                    <img src="/images/rasberry-ice-pops.jpg" alt="Rasberry Popsicles"/>
+                </div>
+                <div>
+                    Photo by <a href="https://unsplash.com/de/@pablomerchanm?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Pablo Merchán Montes</a> on <a href="https://unsplash.com/photos/selective-focus-photography-of-thee-purple-ice-pops-near-pine-cones-MXovqM130UI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+                </div>
             </main>
-            <a href="/places">
-                <button className="btn-primary">Places Page</button>
-            </a>
         </Def>
     )
 }
