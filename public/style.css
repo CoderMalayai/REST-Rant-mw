@@ -2,3 +2,12 @@ h1 {
     text-align: center;
     color: purple;
 }
+
+img {
+    width: 320px;
+    height: 28vh;
+}
+
+.col-sm-6 {
+    text-align: center;
+}
