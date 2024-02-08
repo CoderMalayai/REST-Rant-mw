@@ -58,3 +58,8 @@ As a restaurant reviewer, I need a app where you can add, update, and delete res
 ![A simple draw up of how I want a app to be.](/assests/REST-Rant%20Wireframe.jpg)
 
 ## Notes
+
+## Sources/Links
+
+*https://www.supercutekawaii.com/category/travel-japan/character-cafes/
+*
