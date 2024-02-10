@@ -11,3 +11,38 @@ img {
 .col-sm-6 {
     text-align: center;
 }
+
+body {
+    background-color: #ECDC7D;
+    text-align: center;
+}
+
+main {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: white;
+}
+
+nav {
+    background-color: #A8E3DA;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 25px;
+}
+
+nav a {
+    color: black;
+    font-size: 1.5em;
+}
+nav a:hover {
+    color: #7E4D87;
+    text-decoration: none;
+}
