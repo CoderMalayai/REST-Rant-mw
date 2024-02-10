@@ -23,6 +23,8 @@ main {
     background-color: white;
 }
 
+/* Nav bar */
+
 nav {
     background-color: #A8E3DA;
     padding: 10px;
@@ -46,3 +48,5 @@ nav a:hover {
     color: #7E4D87;
     text-decoration: none;
 }
+
+/* Nav bar */
