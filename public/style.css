@@ -26,6 +26,8 @@ main {
 /* Nav bar */
 
 nav {
+    display: flex;
+    justify-content: center;
     background-color: #A8E3DA;
     padding: 10px;
 }
@@ -50,3 +52,11 @@ nav a:hover {
 }
 
 /* Nav bar */
+
+/* Show locations pic/title */
+
+.col {
+    padding: 10px;
+}
+
+/* Show locations pic/title Ends */
