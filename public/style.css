@@ -1,3 +1,7 @@
+* {
+    text-align: center;
+}
+
 h1 {
     text-align: center;
     color: purple;
@@ -24,7 +28,6 @@ main {
 }
 
 /* Nav bar */
-
 nav {
     display: flex;
     justify-content: center;
@@ -50,13 +53,23 @@ nav a:hover {
     color: #7E4D87;
     text-decoration: none;
 }
-
 /* Nav bar */
 
 /* Show locations pic/title */
-
 .col {
     padding: 10px;
 }
-
 /* Show locations pic/title Ends */
+
+/* Edit/Delete buttons */
+.edit-delete {
+    display: flex;
+    justify-content: space-evenly;
+}
+/* Edit/Delete buttons */
+
+/* Form styling */
+.row {
+    text-align: center;
+}
+/* Form styling */

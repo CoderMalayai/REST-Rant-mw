@@ -24,14 +24,16 @@ function show (data) {
                 </div>
                 <h2>Comments</h2>
                 <p>No comments yet!!!</p>
-                <a href={`/places/${data.id}/edit`} className="btn btn-warning">
-                    Edit
-                </a>
-                <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
-                    <button type="Submit" className="btn btn-danger">
-                        Delete
-                    </button>
-                </form>
+                <div class="edit-delete">
+                    <a href={`/places/${data.id}/edit`} className="btn btn-warning">
+                        Edit
+                    </a>
+                    <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
+                        <button type="Submit" className="btn btn-danger">
+                            Delete
+                        </button>
+                    </form>
+                </div>
             </main>
         </Def>
     )
