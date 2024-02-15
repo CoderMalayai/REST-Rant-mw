@@ -6,9 +6,11 @@ function home () {
         <Def>
             <main>
                 <h1>REST-Rant</h1>
-                <a href="/places">
+                <div class="places-page-button">
+                    <a href="/places">
                     <button className="btn-primary">Places Page</button>
                 </a>
+                </div>
                 <div>
                     <img src="/images/rasberry-ice-pops.jpg" alt="Rasberry Popsicles"/>
                 </div>

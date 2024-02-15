@@ -4,12 +4,16 @@
 
 h1 {
     text-align: center;
-    color: purple;
+    color: #7E4D87;
 }
 
 img {
     width: 320px;
     height: 28vh;
+}
+
+.places-page-button {
+    padding: 10px;
 }
 
 .col-sm-6 {
@@ -65,6 +69,8 @@ nav a:hover {
 .edit-delete {
     display: flex;
     justify-content: space-evenly;
+    margin: 45px;
+    padding: 10px;
 }
 /* Edit/Delete buttons */
 
