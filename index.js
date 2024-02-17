@@ -1,8 +1,24 @@
-// Modules and Globals
+// Config
 require('dotenv').config();
+const PORT = process.env.PORT;
+const MONGO_URI = process.env.MONGO_URI;
+console.log(PORT);
+
+// Modules and Globals
 const express = require('express');
 const app = express();
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const { default: mongoose } = require('mongoose');
+
+// Database connection
+mongoose
+    .connect(MONGO_URI)
+    .then(() => {
+        console.log('connected to mongo: ' + MONGO_URI);
+    })
+    .catch((err) => {
+        console.log('Error connecting to mongo: ' + err);
+    });
 
 // Express Settings
 app.set('view engine', 'jsx')
