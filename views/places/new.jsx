@@ -1,7 +1,15 @@
 const React = require('react')
 const Def = require('../default')
 
-function new_form () {
+function new_form (data) {
+    let message = ''
+        if (data.message) {
+            message = (
+                <h4 class="alert alert-danger" role="alert">
+                    {data.message}
+                </h4>
+            )
+        }
     return (
         <Def>
             <head>
@@ -9,6 +17,7 @@ function new_form () {
             </head>
             <main>
                 <h1>Add a New Place</h1>
+                {message}
                 <form method="POST" action="/places">
                     <div className="form-group row justify-content-center">
                         <div class="col-6">
