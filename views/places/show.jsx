@@ -12,13 +12,15 @@ function show (data) {
                     <div class="row align-items-start">
                         <div class="col">
                             <img src={data.place.pic} alt={data.place.name}/>
+                            <h3>Located in {data.place.city}, {data.place.state}</h3>
                         </div>
                         <div class="col">
                             <h1>{data.place.name}</h1>
                             <h2>Rating</h2>
                             <p>Not Rated</p>
                             <h2>Description</h2>
-                            <p></p>
+                            <h3>{data.place.showEstablished()}</h3>
+                            <h4>Serving {data.place.cuisines}</h4>
                         </div>
                     </div>
                 </div>
