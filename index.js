@@ -8,7 +8,7 @@ console.log(PORT);
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
-const { default: mongoose } = require('mongoose');
+const mongoose = require('mongoose');
 
 // Database connection
 mongoose

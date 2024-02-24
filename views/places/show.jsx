@@ -7,17 +7,20 @@ function show (data) {
             No comments yet!!!
         </h3>
     )
-    if (data.place.comments.length) {
+    if (data.place.comments.length > 0) {
         comments = data.place.comments.map((comment) => {
             return (
-                <div key={comment.id} className="border">
-                    <h2 className="rant">{comment.rant ? 'Rant!' : 'Rave!'}</h2>
-                    <h4>{c.content}</h4>
-                    <h3>
-                        <strong>- {comment.author}</strong>
-                    </h3>
-                    <h4>Rating: {comment.stars}</h4>
-                    <p className="comment-text">{comment.centent}</p>
+                <div key={comment.id} className="card mb-3">
+                    <div>
+                        <h5 className='card-body'>{comment.author}</h5>
+                        <h6 className='card-subtitle mb-2 text-muted'>
+                            {comment.rant ? 'Rant!' : 'Rave!'}
+                        </h6>
+                        <h6 className='card-subtitle mb-2 text-muted'>
+                            Rating: {comment.stars} stars
+                        </h6>
+                        <p className='card-text'>{comment.content}</p>
+                    </div>
                 </div>
             )
         })
@@ -46,11 +49,14 @@ function show (data) {
                 </div>
                 <h2>Comments</h2>
                 {comments}
+                <a href={`/places/${data.place.id}/comments/new`} className='btn btn-primary'>
+                    <i className='bi bi-plus-circle-fill'></i> Add Comment
+                </a>
                 <div class="edit-delete">
-                    <a href={`/places/${data.id}/edit`} className="btn btn-warning">
+                    <a href={`/places/${data.place.id}/edit`} className="btn btn-warning">
                         Edit
                     </a>
-                    <form method="POST" action={`/places/${data.id}?_method=DELETE`}>
+                    <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}>
                         <button type="Submit" className="btn btn-danger">
                             Delete
                         </button>
