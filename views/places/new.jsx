@@ -12,9 +12,6 @@ function new_form (data) {
         }
     return (
         <Def>
-            <head>
-                <link rel="stylesheet" href="/style.css"/>
-            </head>
             <main>
                 <h1>Add a New Place</h1>
                 {message}

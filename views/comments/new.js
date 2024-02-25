@@ -3,7 +3,7 @@ const Def = require('../default')
 
 const New = ({ place }) => {
     return (
-        <Default>
+        <Def>
             <main>
                 <h1>Add a New Comment for: {place.name}</h1>
                 <form action={`/places/${place.id}/comments`} method='POST'>
@@ -44,7 +44,7 @@ const New = ({ place }) => {
                     </div>
                 </form>
             </main>
-        </Default>
+        </Def>
     );
 };
 

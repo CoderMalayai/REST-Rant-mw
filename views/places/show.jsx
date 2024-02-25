@@ -27,9 +27,6 @@ function show (data) {
     }
     return (
         <Def>
-            <head>
-                <link rel="stylesheet" href="/style.css"/>
-            </head>
             <main>
                 <div class="container text-center">
                     <div class="row align-items-start">
