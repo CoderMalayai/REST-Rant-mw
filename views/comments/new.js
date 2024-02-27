@@ -7,18 +7,27 @@ const New = ({ place }) => {
             <main>
                 <h1>Add a New Comment for: {place.name}</h1>
                 <form action={`/places/${place.id}/comments`} method='POST'>
-                    <div className="mb-3">
+                    <div className="form-group row justify-content-center">
+                        <div className="col-6">
                         <label htmlFor='author'>Author</label>
                         <input type='text' name='author' id='author' className="form-control"/>
+                        </div>
                     </div>
                     <div className="mb-3">
                         <label htmlFor='rant'>
-                            Rant{' '}
+                            Rant🤬{' '}
                             <input type='checkbox' name='rant' id='rant' className="checkbox"/>
                         </label>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor='content'>Content</label>
+                        <label htmlFor='rave'>
+                            Rave🥳{' '}
+                            <input type='checkbox' name='rave' id='rave' className="checkbox"/>
+                        </label>
+                    </div>
+                    <div className="form-group row justify-content-center">
+                        <div className="mb-3">
+                        <label htmlFor='stars'>Stars⭐</label>
                         <input
                             type='number'
                             step={0.5}
@@ -26,8 +35,10 @@ const New = ({ place }) => {
                             id='stars'
                             className='form-control'
                         />
+                        </div>
                     </div>
-                    <div className="mb-3">
+                    <div className="form-group row justify-content-center">
+                        <div className="col-6">
                         <label htmlFor='content'>Content</label>
                         <input
                             type='text'
@@ -36,7 +47,9 @@ const New = ({ place }) => {
                             className='form-control'
                             required
                         />
+                        </div>
                     </div>
+                    
                     <div className="mb-3">
                         <button type='submit' className='btn btn-primary'>
                             <i className='bi bi-plus-circle-fill'></i> Add Comment
