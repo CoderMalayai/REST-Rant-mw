@@ -15,13 +15,13 @@ const New = ({ place }) => {
                     </div>
                     <div className="mb-3">
                         <label htmlFor='rant'>
-                            Rant🤬{' '}
+                            Rant🤬!{' '}
                             <input type='checkbox' name='rant' id='rant' className="checkbox"/>
                         </label>
                     </div>
                     <div className="mb-3">
                         <label htmlFor='rave'>
-                            Rave🥳{' '}
+                            Rave🥳!{' '}
                             <input type='checkbox' name='rave' id='rave' className="checkbox"/>
                         </label>
                     </div>

@@ -2,6 +2,22 @@ const React = require ('react')
 const Def = require('../default')
 
 function show (data) {
+    let rating = (
+        <h3 className="inactive">
+            Not Rated Yet!!!
+        </h3>
+    )
+    if (data.place.comments.length > 0) {
+        let sumRatings = data.place.comments.reduce((tot, c) => {
+            return tot + c.stars
+        }, 0)
+        let averageRating = sumRatings / data.place.comments.length
+        rating = (
+            <h3>
+                {averageRating} stars
+            </h3>
+        )
+    }
     let comments = (
         <h3 className="inactive">
             No comments yet!!!
@@ -10,16 +26,20 @@ function show (data) {
     if (data.place.comments.length > 0) {
         comments = data.place.comments.map((comment) => {
             return (
-                <div key={comment.id} className="card mb-3">
-                    <div>
-                        <h5 className='card-body'>{comment.author}</h5>
-                        <h6 className='card-subtitle mb-2 text-muted'>
-                            {comment.rant ? 'Rant!' : 'Rave!'}
-                        </h6>
-                        <h6 className='card-subtitle mb-2 text-muted'>
-                            Rating: {comment.stars} stars
-                        </h6>
-                        <p className='card-text'>{comment.content}</p>
+                <div key={comment.id}>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                <h5 class="card-title">{comment.author}</h5>
+                                <h4 class="card-text">{comment.rant ? 'Rant🤬!' : 'Rave🥳!'}</h4>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                <il class="list-group-item">{comment.content}</il>
+                                <il class="list-group-item">Rating: {comment.stars} stars</il>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )
@@ -37,7 +57,7 @@ function show (data) {
                         <div class="col">
                             <h1>{data.place.name}</h1>
                             <h2>Rating</h2>
-                            <p>Not Rated</p>
+                            <p>{rating}</p>
                             <h2>Description</h2>
                             <h3>{data.place.showEstablished()}</h3>
                             <h4>Serving {data.place.cuisines}</h4>
