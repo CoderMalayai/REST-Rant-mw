@@ -65,6 +65,17 @@ router.get('/:id/edit', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
+    db.Place.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+        res.redirect(`/places/${req.params.id}`)
+    })
+    .catch(err => {
+        console.log('err', err)
+        res.render('error404')
+    })
+})
+
+router.put('/:id', (req, res) => {
     db.PLace.findByIdAndUpdate(req.params.id, req.body, { new: true })
         .then((updatedPlace) => {
             res.redirect(`/places/${updatedPlace.id}`)
@@ -117,7 +128,24 @@ router.post('/:id/comments', (req, res) => {
 })
 
 router.delete('/:id/rant/:rantId', (req, res) => {
-    res.send('GET /places/:id/rant/:rantId stub')
+    db.Place.findByIdAndDelete(req.params.id)
+    .then(place => {
+        res.redirect('/places')
+    })
+    .catch(err => {
+        console.log('err', err)
+        res.render('error404')
+    })
+})
+
+router.get('/:id/comments/edit', (req, res) => {
+    db.Place.findById(req.params.id)
+    .then(place => {
+        res.render('places/edit', { place })
+    })
+    .catch(err => {
+        res.render('error404')
+    })
 })
 
 module.exports = router

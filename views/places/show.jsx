@@ -11,10 +11,14 @@ function show (data) {
         let sumRatings = data.place.comments.reduce((tot, c) => {
             return tot + c.stars
         }, 0)
-        let averageRating = sumRatings / data.place.comments.length
+        let averageRating = Math.round(sumRatings / data.place.comments.length)
+        let stars = ''
+        for (let i = 0; i < averageRating; i++) {
+            stars += '⭐'
+        }
         rating = (
             <h3>
-                {averageRating} stars
+                {stars} stars
             </h3>
         )
     }
@@ -38,6 +42,16 @@ function show (data) {
                                 <il class="list-group-item">{comment.content}</il>
                                 <il class="list-group-item">Rating: {comment.stars} stars</il>
                                 </ul>
+                                <div class="edit-delete">
+                                <a href={`/places/${data.place.id}/edit`} className="btn btn-warning">
+                                    Edit
+                                </a>
+                                <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}>
+                                    <button type="Submit" className="btn btn-danger">
+                                        Delete
+                                    </button>
+                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
