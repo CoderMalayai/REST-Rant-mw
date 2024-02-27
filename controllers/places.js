@@ -64,7 +64,7 @@ router.get('/:id/edit', (req, res) => {
         })
 })
 
-router.put('/:id', (req, res) => {
+router.put('/id', (req, res) => {
     db.Place.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
         res.redirect(`/places/${req.params.id}`)
