@@ -52,28 +52,6 @@ function show (data) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                <h5 class="card-title">{comment.author}</h5>
-                                <h4 class="card-text">{comment.rant ? 'Rant🤬!' : 'Rave🥳!'}</h4>
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                <il class="list-group-item">{comment.content}</il>
-                                <il class="list-group-item">Rating: {comment.stars} stars</il>
-                                </ul>
-                                <div class="edit-delete">
-                                <a href={`/places/${data.place.id}/edit`} className="btn btn-outline-warning">
-                                    Edit
-                                </a>
-                                <form method="POST" action={`/places/${data.place.id}?_method=DELETE`}>
-                                    <button type="Submit" className="btn btn-outline-danger">
-                                        Delete
-                                    </button>
-                                </form>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             )
