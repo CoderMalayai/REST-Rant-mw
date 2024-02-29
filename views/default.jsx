@@ -12,15 +12,15 @@ function Def (html) {
             </head>
             <body>
                 <nav>
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link " href="/">Home</a>
+                    <ul className="nav nav-tabs" role="tablist">
+                        <li className="nav-item">
+                            <a className="nav-link " href="/">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="/places">Places</a>
+                        <li className="nav-item">
+                            <a className="nav-link " href="/places">Places</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link " href="/places/new">Add Place</a>
+                        <li className="nav-item">
+                            <a className="nav-link " href="/places/new">Add Place</a>
                         </li>
                     </ul>
                 </nav>
