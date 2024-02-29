@@ -31,23 +31,23 @@ function show (data) {
         comments = data.place.comments.map((comment) => {
             return (
                 <div key={comment.id}>
-                    <div class="row row-cols-1 row-cols-md-2 g-4">
-                        <div class="col">
-                            <div class="card">
-                                <div class="card-body">
-                                <h5 class="card-title">{comment.author}</h5>
-                                <h4 class="card-text">{comment.rant ? 'Rant🤬!' : 'Rave🥳!'}</h4>
+                    <div className="row row-cols-1 row-cols-md-2 g-4">
+                        <div className="col">
+                            <div className="card">
+                                <div className="card-body">
+                                <h5 className="card-title">{comment.author}</h5>
+                                <h4 className="card-text">{comment.rant ? 'Rant🤬!' : 'Rave🥳!'}</h4>
                                 </div>
-                                <ul class="list-group list-group-flush">
-                                <il class="list-group-item">{comment.content}</il>
-                                <il class="list-group-item">Rating: {comment.stars} stars</il>
+                                <ul className="list-group list-group-flush">
+                                <il className="list-group-item">{comment.content}</il>
+                                <il className="list-group-item">Rating: {comment.stars} stars</il>
                                 </ul>
-                                <div class="edit-delete">
-                                <a href={`/places/${data.place.id}/edit`} className="btn btn-outline-warning">
+                                <div className="edit-delete">
+                                <a href={`/places/${data.place.id}/comments/${comment.id}/edit`} className="btn btn-outline-warning">
                                     Edit
                                 </a>
-                                <form method="POST" action={`/places/${data.place.id}/comment/${c.id}?_method=DELETE`}>
-                                    <input type="Submit" className="btn btn-outline-danger" value="Delete Comment" />
+                                <form method="POST" action={`/places/${data.place.id}/comment/${comment.id}?_method=DELETE`}>
+                                    <input type="Submit" className="btn btn-outline-danger" defaultValue="Delete Comment" />
                                 </form>
                                 </div>
                             </div>
@@ -60,13 +60,13 @@ function show (data) {
     return (
         <Def>
             <main>
-                <div class="container text-center">
-                    <div class="row align-items-start">
-                        <div class="col">
+                <div className="container text-center">
+                    <div className="row align-items-start">
+                        <div className="col">
                             <img src={data.place.pic} alt={data.place.name}/>
                             <h3>Located in {data.place.city}, {data.place.state}</h3>
                         </div>
-                        <div class="col">
+                        <div className="col">
                             <h1>{data.place.name}</h1>
                             <h2>Rating</h2>
                             <p>{rating}</p>
@@ -81,7 +81,7 @@ function show (data) {
                 <a href={`/places/${data.place.id}/comments/new`} className='btn btn-primary'>
                     <i className='bi bi-plus-circle-fill'></i> Add Comment
                 </a>
-                <div class="edit-delete">
+                <div className="edit-delete">
                     <a href={`/places/${data.place.id}/edit`} className="btn btn-warning">
                         Edit
                     </a>
