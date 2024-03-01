@@ -127,21 +127,69 @@ router.post('/:id/comments', (req, res) => {
         })
 })
 
-router.delete('/:id/rant/:rantId', (req, res) => {
-    db.Place.findByIdAndDelete(req.params.id)
-    .then(place => {
-        res.redirect('/places')
-    })
-    .catch(err => {
-        console.log('err', err)
-        res.render('error404')
+// router.delete('/:id/rant/:rantId', (req, res) => {
+//     db.Place.findByIdAndDelete(req.params.id)
+//     .then(place => {
+//         res.redirect('/places')
+//     })
+//     .catch(err => {
+//         console.log('err', err)
+//         res.render('error404')
+//     })
+// })
+
+// Delete comment route
+router.delete('/:id/comment/:commentId', (req, res) => {
+    const commentId = req.params.commentId
+    const placeId = req.params.id
+    // Delete the comment
+    db.Comment.findByIdAndDelete(commentId).then(() => {
+        // Delete the comment from the place's comment array
+        db.Place.findById(placeId).then(place => {
+            place.comments = place.comments.filter(comment => comment.id !== commentId)
+            place.save()
+            res.redirect(`/places/${place.id}`)
+        })
+        .catch(err => {
+            console.log('err', err)
+            res.render('error404')
+        })
     })
 })
 
-router.get('/:id/comments/edit', (req, res) => {
+// router.get('/:id/comments/edit', (req, res) => {
+//     db.Place.findById(req.params.id)
+//     .then(place => {
+//         res.render('places/edit', { place })
+//     })
+//     .catch(err => {
+//         res.render('error404')
+//     })
+// })
+
+// Edit comment from display
+router.get('/:id/comments/:commentId/edit', (req, res) => {
     db.Place.findById(req.params.id)
     .then(place => {
-        res.render('places/edit', { place })
+        db.Comment.findById(req.params.commentId)
+    .then(comment => {
+        res.render('comments/edit', { place, comment })
+    })
+    .catch(err => {
+        res.render('error404')
+    })
+    })
+})
+
+// Edit comment form submit (PUT)
+router.put('/:id/comments/:commentId', (req, res) => {
+    const placeId = req.params.id
+    const commentId = req.params.commentId
+    let commentData = req.body
+    commentData.rant = commentData.rant === 'on'
+    commentData.stars = parseFloat(commentData.stars)
+    db.Comment.findByIdAndUpdate(commentId, commentData).then(() => {
+        res.redirect(`/places/${placeId}`)
     })
     .catch(err => {
         res.render('error404')

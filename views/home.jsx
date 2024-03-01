@@ -6,7 +6,7 @@ function home () {
         <Def>
             <main>
                 <h1>REST-Rant</h1>
-                <div class="places-page-button">
+                <div className="places-page-button">
                     <a href="/places">
                     <button className="btn-primary">Places Page</button>
                 </a>
