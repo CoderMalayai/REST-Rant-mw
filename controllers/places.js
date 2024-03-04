@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
     })
     .catch((err) => {
         console.log(err)
-        res.status(404).send(render('Error404'))
+        res.status(404).send(render('error404'))
     })
 })
 
@@ -60,7 +60,7 @@ router.get('/:id/edit', (req, res) => {
         })
         .catch((err) => {
             console.log(err)
-            res.status(404).send(render('Error404'));
+            res.status(404).send(render('error404'));
         })
 })
 
@@ -82,7 +82,7 @@ router.put('/:id', (req, res) => {
         })
         .catch((err) => {
             console.log(err)
-            res.status(404).send(render('Error404'));
+            res.status(404).send(render('error404'));
         })
 })
 
@@ -93,7 +93,7 @@ router.delete('/:id', (req, res) => {
         })
         .catch((err) => {
             console.log(err)
-            res.status(404).send(render('Error404'))
+            res.status(404).send(render('error404'))
         })
 })
 
@@ -104,7 +104,7 @@ router.get('/:id/comments/new', (req, res) => {
         })
         .catch((err) => {
             console.log(err)
-            res.status(404).send ('Not Found')
+            res.status(404).send ('not found')
         })
 })
 
@@ -122,7 +122,7 @@ router.post('/:id/comments', (req, res) => {
                 })
                 .catch((err) => {
                     console.log(err)
-                    res.status(404).send('Not Found')
+                    res.status(404).send('not found')
                 })
         })
 })
