@@ -1,13 +1,14 @@
 // Config
 require('dotenv').config();
 const PORT = process.env.PORT;
-// const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGO_URI;
 console.log(PORT);
 
 // Modules and Globals
 const express = require('express');
 const app = express();
 const methodOverride = require('method-override');
+const render = require('./render')
 // const mongoose = require('mongoose');
 
 // Database connection
@@ -27,7 +28,7 @@ app.use(express.urlencoded({ extented: true }))
 app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
-    res.render('Home');
+    res.render('home');
 });
 
 // Load the places controller
