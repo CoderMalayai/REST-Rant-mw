@@ -11,8 +11,7 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 
 // Database connection
-mongoose
-    .connect(MONGO_URI)
+mongoose.connect(MONGO_URI)
     .then(() => {
         console.log('connected to mongo: ' + MONGO_URI);
     })
