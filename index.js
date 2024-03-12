@@ -12,13 +12,13 @@ const render = require('./render')
 // const mongoose = require('mongoose');
 
 // Database connection
-// mongoose.connect(MONGO_URI)
-//     .then(() => {
-//         console.log('connected to mongo: ' + MONGO_URI);
-//     })
-//     .catch((err) => {
-//         console.log('Error connecting to mongo: ' + err);
-//     });
+//  mongoose.connect(MONGO_URI)
+//      .then(() => {
+//          console.log('connected to mongo: ' + MONGO_URI);
+//      })
+//      .catch((err) => {
+//          console.log('Error connecting to mongo: ' + err);
+//      });
 
 // Express Settings
 app.set('view engine', 'jsx')
