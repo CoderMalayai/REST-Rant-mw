@@ -17,7 +17,7 @@ function Def (html) {
                             <a className="nav-link " href="/">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link " href="https://rest-rant-mw.onrender.com/places">Places</a>
+                            <a className="nav-link " href="/places">Places</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link " href="/places/new">Add Place</a>

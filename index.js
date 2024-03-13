@@ -28,6 +28,7 @@ app.use(express.urlencoded({ extented: true }))
 app.use(methodOverride('_method'))
 
 app.get('/', (req, res) => {
+    console.log("Hello World");
     res.render('home');
 });
 
